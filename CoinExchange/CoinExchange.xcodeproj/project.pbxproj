@@ -16,6 +16,11 @@
 		8405DB4528C2539900DA2630 /* CoinExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB4428C2539900DA2630 /* CoinExchangeTests.swift */; };
 		8405DB4F28C2539900DA2630 /* CoinExchangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB4E28C2539900DA2630 /* CoinExchangeUITests.swift */; };
 		8405DB5128C2539900DA2630 /* CoinExchangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB5028C2539900DA2630 /* CoinExchangeUITestsLaunchTests.swift */; };
+		8405DB6028C25FFF00DA2630 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB5F28C25FFF00DA2630 /* Welcome.storyboard */; };
+		8405DB6228C2600F00DA2630 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB6128C2600F00DA2630 /* WelcomeViewController.swift */; };
+		8405DB6428C2602A00DA2630 /* WelcomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB6328C2602A00DA2630 /* WelcomeModule.swift */; };
+		8405DB6628C2645700DA2630 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB6528C2645700DA2630 /* Colors.xcassets */; };
+		8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB6728C2657F00DA2630 /* NSLayoutConstraint+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		8405DB4A28C2539900DA2630 /* CoinExchangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinExchangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8405DB4E28C2539900DA2630 /* CoinExchangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeUITests.swift; sourceTree = "<group>"; };
 		8405DB5028C2539900DA2630 /* CoinExchangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinExchangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8405DB5F28C25FFF00DA2630 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		8405DB6128C2600F00DA2630 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		8405DB6328C2602A00DA2630 /* WelcomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModule.swift; sourceTree = "<group>"; };
+		8405DB6528C2645700DA2630 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8405DB6728C2657F00DA2630 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		8405DB2C28C2539700DA2630 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				8405DB5D28C25FEF00DA2630 /* Welcome */,
 				8405DB2D28C2539700DA2630 /* AppDelegate.swift */,
 				8405DB2F28C2539700DA2630 /* SceneDelegate.swift */,
 				8405DB3128C2539700DA2630 /* ViewController.swift */,
@@ -106,6 +117,8 @@
 				8405DB3628C2539900DA2630 /* Assets.xcassets */,
 				8405DB3828C2539900DA2630 /* LaunchScreen.storyboard */,
 				8405DB3B28C2539900DA2630 /* Info.plist */,
+				8405DB6528C2645700DA2630 /* Colors.xcassets */,
+				8405DB6728C2657F00DA2630 /* NSLayoutConstraint+Extension.swift */,
 			);
 			path = CoinExchange;
 			sourceTree = "<group>";
@@ -125,6 +138,24 @@
 				8405DB5028C2539900DA2630 /* CoinExchangeUITestsLaunchTests.swift */,
 			);
 			path = CoinExchangeUITests;
+			sourceTree = "<group>";
+		};
+		8405DB5D28C25FEF00DA2630 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				8405DB5E28C25FF300DA2630 /* view */,
+				8405DB6328C2602A00DA2630 /* WelcomeModule.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		8405DB5E28C25FF300DA2630 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8405DB5F28C25FFF00DA2630 /* Welcome.storyboard */,
+				8405DB6128C2600F00DA2630 /* WelcomeViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8405DB6628C2645700DA2630 /* Colors.xcassets in Resources */,
 				8405DB3A28C2539900DA2630 /* LaunchScreen.storyboard in Resources */,
+				8405DB6028C25FFF00DA2630 /* Welcome.storyboard in Resources */,
 				8405DB3728C2539900DA2630 /* Assets.xcassets in Resources */,
 				8405DB3528C2539700DA2630 /* Main.storyboard in Resources */,
 			);
@@ -259,6 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8405DB3228C2539700DA2630 /* ViewController.swift in Sources */,
+				8405DB6228C2600F00DA2630 /* WelcomeViewController.swift in Sources */,
+				8405DB6428C2602A00DA2630 /* WelcomeModule.swift in Sources */,
+				8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,
 				8405DB3028C2539700DA2630 /* SceneDelegate.swift in Sources */,
 			);
