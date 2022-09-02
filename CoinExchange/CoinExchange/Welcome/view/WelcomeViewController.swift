@@ -19,11 +19,11 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var welcomeImageViewCenterYConstraint: NSLayoutConstraint!
     @IBOutlet weak var welcomeGreetingLabelCenterYConstraint: NSLayoutConstraint!
     
+    var presenter: WelcomePresenting?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,12 +31,30 @@ class WelcomeViewController: UIViewController {
         
         /// Start Animation after 1 second delay of view did load.
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.welcomeImageViewAnimation()
-            self?.welcomeGreetingLabelAnimation()
+            self?.presenter?.viewDidAppear()
         }
         
     }
     
+   
+
+}
+
+// MARK: - Welcome View Controlling Conformance.
+extension WelcomeViewController: WelcomeViewControlling {
+    
+    func renderWelcomeImageAnimation() {
+        welcomeImageViewAnimation()
+    }
+    
+    func renderWelcomeGreetingLabelAnimation() {
+        welcomeGreetingLabelAnimation()
+    }
+}
+
+
+// MARK: - Welcome View Animating.
+extension WelcomeViewController {
     /// Welcome Image View Animation with AutoLayout Constraint.
     private func welcomeImageViewAnimation() {
         
@@ -59,9 +77,8 @@ class WelcomeViewController: UIViewController {
         
         UIView.animate(withDuration: 1.0, delay: 0.2, options: .curveEaseInOut, animations: { [weak self] in
             self?.view.layoutIfNeeded()
-        }, completion: nil)
+        }, completion: { [weak self] _ in
+            self?.presenter?.didFinishedWelcomeAnimation()
+        })
     }
-
 }
-
-
