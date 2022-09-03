@@ -14,19 +14,15 @@ struct GetCoinListsService: GetCoinListsServiceProtocol {
     
     
     func fetchCoinLists() {
-        guard let url = URL(string: "https://api.coindesk.com/v1/bpi/currentprice.json") else { return }
-        AF.request(url)
-            .response { response in
-                print("response is \(response)")
+        let router = ApiRouter.getCurrentPrice
+        NetworkService.shared.request(router: router) { (result: Result<CurrentPriceModel,NetworkError>) in
+            switch result {
+            case .success(let success):
+                print("Success \(success)")
+            case .failure(let failure):
+                print("Failure is \(failure.localizedDescription)")
             }
-            .responseDecodable { (response: DataResponse<CurrentPriceModel,AFError>) in
-                switch response.result {
-                case let .success(model):
-                    print("Model is \(model)")
-                case let .failure(error):
-                    print("error is \(error.localizedDescription)")
-                }
-            }
+        }
     }
     
     

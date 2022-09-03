@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         return tblView
     }()
     
-    let coins = ["USD","EUR","GBP"]
+    var model: CurrentPriceModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +44,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coins.count
+        return model?.bpi.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = coins[indexPath.row]
+        cell.textLabel?.text = Array(model?.bpi ?? [:])[indexPath.row].key
         return cell
     }
     

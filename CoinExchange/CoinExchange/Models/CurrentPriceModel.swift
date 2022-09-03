@@ -9,5 +9,6 @@ import Foundation
 
 
 struct CurrentPriceModel: Codable {
-    let bpi: [String:CurrencyModel]
+    let bpi: [ String : CurrencyModel]
+    let time: TimeModel
 }

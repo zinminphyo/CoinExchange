@@ -40,6 +40,9 @@
 		8462E49728C28341002E99D2 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462E49628C28341002E99D2 /* CurrencyModel.swift */; };
 		8462E49928C2839A002E99D2 /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462E49828C2839A002E99D2 /* TimeModel.swift */; };
 		8462E49B28C283FC002E99D2 /* CurrentPriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462E49A28C283FC002E99D2 /* CurrentPriceModel.swift */; };
+		84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E3928C35269008B33B7 /* ApiRouter.swift */; };
+		84AC4E3C28C355C0008B33B7 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E3B28C355C0008B33B7 /* NetworkError.swift */; };
+		84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E3D28C35B49008B33B7 /* NetworkService.swift */; };
 		F2DBA8E06E037A29BA6A1FBA /* Pods_CoinExchange_CoinExchangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372A2C269F28B1A30D57979C /* Pods_CoinExchange_CoinExchangeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,9 @@
 		8462E49628C28341002E99D2 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		8462E49828C2839A002E99D2 /* TimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
 		8462E49A28C283FC002E99D2 /* CurrentPriceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceModel.swift; sourceTree = "<group>"; };
+		84AC4E3928C35269008B33B7 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		84AC4E3B28C355C0008B33B7 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		84AC4E3D28C35B49008B33B7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		86985C31138A4C980F39FE1A /* Pods-CoinExchangeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinExchangeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoinExchangeTests/Pods-CoinExchangeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93680E177FBF2DC33167F964 /* Pods-CoinExchange-CoinExchangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinExchange-CoinExchangeUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinExchange-CoinExchangeUITests/Pods-CoinExchange-CoinExchangeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC14412954A2F90C1508A576 /* Pods-CoinExchange-CoinExchangeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinExchange-CoinExchangeUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoinExchange-CoinExchangeUITests/Pods-CoinExchange-CoinExchangeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		8405DB2C28C2539700DA2630 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				84AC4E3628C35249008B33B7 /* NetworkLayer */,
 				8462E49528C2832C002E99D2 /* Models */,
 				8462E48D28C281B8002E99D2 /* Services */,
 				8462E46E28C26E0F002E99D2 /* InApp */,
@@ -335,6 +342,16 @@
 				8462E49A28C283FC002E99D2 /* CurrentPriceModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		84AC4E3628C35249008B33B7 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				84AC4E3928C35269008B33B7 /* ApiRouter.swift */,
+				84AC4E3B28C355C0008B33B7 /* NetworkError.swift */,
+				84AC4E3D28C35B49008B33B7 /* NetworkService.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +600,7 @@
 			files = (
 				8405DB3228C2539700DA2630 /* ViewController.swift in Sources */,
 				8462E48A28C278CF002E99D2 /* WelcomeRouting.swift in Sources */,
+				84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */,
 				8462E48628C27850002E99D2 /* WelcomeViewControlling.swift in Sources */,
 				8462E48C28C27933002E99D2 /* WelcomeRouter.swift in Sources */,
 				8462E47F28C270A1002E99D2 /* ExchangeViewController.swift in Sources */,
@@ -590,10 +608,12 @@
 				8462E49928C2839A002E99D2 /* TimeModel.swift in Sources */,
 				8405DB6228C2600F00DA2630 /* WelcomeViewController.swift in Sources */,
 				8462E47B28C26EDD002E99D2 /* InAppModule.swift in Sources */,
+				84AC4E3C28C355C0008B33B7 /* NetworkError.swift in Sources */,
 				8462E49B28C283FC002E99D2 /* CurrentPriceModel.swift in Sources */,
 				8405DB6428C2602A00DA2630 /* WelcomeModule.swift in Sources */,
 				8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */,
 				8462E48828C278A8002E99D2 /* WelcomePresenter.swift in Sources */,
+				84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */,
 				8462E47D28C27021002E99D2 /* HomeViewController.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,
 				8462E47928C26ECF002E99D2 /* InAppViewController.swift in Sources */,
