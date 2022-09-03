@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CurrencyCell: UITableViewCell {
     
@@ -41,8 +42,47 @@ class CurrencyCell: UITableViewCell {
         guard let model = currencyModel else { return }
         currencyNameLabel.text = model.code
         currenyDescriptionLabel.text = model.description
-        currencyRateLabel.text = model.rate
+        let type = getCurrenyType(for: model.code)
+        currencyRateLabel.text = getCurrencySign(for: type) + model.rate
+        currencyImageView.image = getImage(for: type)
     }
     
+    func getCurrenyType(for name: String) -> CurrencyType {
+        switch name {
+        case "USD":
+            return .USD
+        case "EUR":
+            return .EUR
+        case "GBP":
+            return .GBP
+        default:
+            return .UNKNOWN
+        }
+    }
     
+    func getImage(for type: CurrencyType) -> UIImage? {
+        switch type {
+        case .USD:
+            return Images.USD_LOGO
+        case .EUR:
+            return Images.EUR_LOGO
+        case .GBP:
+            return Images.GBP_LOGO
+        case .UNKNOWN:
+            return nil
+        }
+    }
+    
+    func getCurrencySign(for type: CurrencyType) -> String {
+        switch type {
+        case .USD:
+            return "$ "
+        case .EUR:
+            return "€ "
+        case .GBP:
+            return "£ "
+        case .UNKNOWN:
+            return ""
+        }
+    }
 }

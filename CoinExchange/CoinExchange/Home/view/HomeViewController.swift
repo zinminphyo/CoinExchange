@@ -24,46 +24,56 @@ class HomeViewController: UIViewController {
         }
     }
     
+    var presenter: HomePresenting?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        tableView.frame = view.bounds
-        tableView.separatorStyle = .none
-        view.addSubview(tableView)
-        
-        tableView.register(UINib(nibName: String(describing: CurrencyCell.self), bundle: nil), forCellReuseIdentifier: CurrencyCell.identifier)
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.dataSource = self
-        
+        dependencyInjection()
+        configureHierarchy()
 
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-            let service = GetCoinListsService()
-            service.fetchCoinLists { result in
-                switch result {
-                case let .success(model):
-                    print("Model is \(model)")
-                    self.model = model
-                case let .failure(error):
-                    print("Error is \(error.localizedDescription)")
-                }
-            }
-        }
+        presenter?.viewDidAppear()
     }
 
     
 }
 
 
+extension HomeViewController {
+    
+    private func configureHierarchy() {
+        configureTableView()
+    }
+    
+    private func configureTableView() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0)
+        ])
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.register(UINib(nibName: String(describing: CurrencyCell.self), bundle: nil), forCellReuseIdentifier: CurrencyCell.identifier)
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    
+}
+
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model?.bpi.count ?? 2
+        return model?.bpi.count ?? 13
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,8 +84,46 @@ extension HomeViewController: UITableViewDataSource {
         } else {
             cell.containerView.startShimmerLoading()
         }
+        cell.selectionStyle = .none
         return cell
     }
     
     
+}
+
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("IndexPath is \(indexPath.row)")
+    }
+}
+
+
+extension HomeViewController: HomeViewControlling {
+    
+    func render(model: CurrentPriceModel) {
+        self.model = model
+    }
+    
+    func render(error: NetworkError) {
+        
+    }
+    
+    
+}
+
+extension HomeViewController {
+    private func dependencyInjection() {
+        let presenter = HomePresenter()
+        let interactor = HomeInteractor()
+        let router = HomeRouter()
+        
+        presenter.view = self
+        presenter.interactor = interactor
+        presenter.router = router
+        router.viewController = self
+        
+        self.presenter = presenter
+    }
 }

@@ -21,8 +21,8 @@ extension UIView {
     
     func startShimmerLoading() {
         
-        let gradientColorOne : CGColor = UIColor(white: 0.65, alpha: 1.0).cgColor
-        let gradientColorTwo : CGColor = UIColor(white: 0.85, alpha: 1.0).cgColor
+        let gradientColorOne : CGColor = UIColor(white: 0.85, alpha: 1.0).cgColor
+        let gradientColorTwo : CGColor = UIColor(white: 0.95, alpha: 1.0).cgColor
 
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds

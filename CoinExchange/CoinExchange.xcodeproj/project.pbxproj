@@ -46,6 +46,14 @@
 		84AC4E4128C3900B008B33B7 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E4028C3900B008B33B7 /* UIView+Extension.swift */; };
 		84AC4E4528C39264008B33B7 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E4328C39264008B33B7 /* CurrencyCell.swift */; };
 		84AC4E4628C39264008B33B7 /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AC4E4428C39264008B33B7 /* CurrencyCell.xib */; };
+		84AC4E4828C3B571008B33B7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E4728C3B571008B33B7 /* Images.swift */; };
+		84AC4E4B28C3C859008B33B7 /* HomePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E4A28C3C859008B33B7 /* HomePresenting.swift */; };
+		84AC4E4D28C3C8BA008B33B7 /* HomeViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E4C28C3C8BA008B33B7 /* HomeViewControlling.swift */; };
+		84AC4E5028C3C9AD008B33B7 /* HomeInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E4F28C3C9AD008B33B7 /* HomeInteracting.swift */; };
+		84AC4E5228C3CA3C008B33B7 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E5128C3CA3C008B33B7 /* HomeInteractor.swift */; };
+		84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E5328C3CAA6008B33B7 /* HomePresenter.swift */; };
+		84AC4E5728C3CBF6008B33B7 /* HomeRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E5628C3CBF6008B33B7 /* HomeRouting.swift */; };
+		84AC4E5928C3CC2B008B33B7 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC4E5828C3CC2B008B33B7 /* HomeRouter.swift */; };
 		F2DBA8E06E037A29BA6A1FBA /* Pods_CoinExchange_CoinExchangeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372A2C269F28B1A30D57979C /* Pods_CoinExchange_CoinExchangeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +122,14 @@
 		84AC4E4028C3900B008B33B7 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		84AC4E4328C39264008B33B7 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		84AC4E4428C39264008B33B7 /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
+		84AC4E4728C3B571008B33B7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		84AC4E4A28C3C859008B33B7 /* HomePresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenting.swift; sourceTree = "<group>"; };
+		84AC4E4C28C3C8BA008B33B7 /* HomeViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControlling.swift; sourceTree = "<group>"; };
+		84AC4E4F28C3C9AD008B33B7 /* HomeInteracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteracting.swift; sourceTree = "<group>"; };
+		84AC4E5128C3CA3C008B33B7 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		84AC4E5328C3CAA6008B33B7 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		84AC4E5628C3CBF6008B33B7 /* HomeRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouting.swift; sourceTree = "<group>"; };
+		84AC4E5828C3CC2B008B33B7 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		86985C31138A4C980F39FE1A /* Pods-CoinExchangeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinExchangeTests.debug.xcconfig"; path = "Target Support Files/Pods-CoinExchangeTests/Pods-CoinExchangeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93680E177FBF2DC33167F964 /* Pods-CoinExchange-CoinExchangeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinExchange-CoinExchangeUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinExchange-CoinExchangeUITests/Pods-CoinExchange-CoinExchangeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC14412954A2F90C1508A576 /* Pods-CoinExchange-CoinExchangeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinExchange-CoinExchangeUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoinExchange-CoinExchangeUITests/Pods-CoinExchange-CoinExchangeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +227,7 @@
 				8405DB3828C2539900DA2630 /* LaunchScreen.storyboard */,
 				8405DB3B28C2539900DA2630 /* Info.plist */,
 				8405DB6528C2645700DA2630 /* Colors.xcassets */,
+				84AC4E4728C3B571008B33B7 /* Images.swift */,
 			);
 			path = CoinExchange;
 			sourceTree = "<group>";
@@ -256,6 +273,9 @@
 		8405DB6F28C26C5100DA2630 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				84AC4E5528C3CBE6008B33B7 /* router */,
+				84AC4E4E28C3C9A3008B33B7 /* interactor */,
+				84AC4E4928C3C850008B33B7 /* presenter */,
 				8462E47228C26E53002E99D2 /* view */,
 			);
 			path = Home;
@@ -293,6 +313,7 @@
 				84AC4E4228C3922D008B33B7 /* cell */,
 				8462E47328C26E5A002E99D2 /* Home.storyboard */,
 				8462E47C28C27021002E99D2 /* HomeViewController.swift */,
+				84AC4E4C28C3C8BA008B33B7 /* HomeViewControlling.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -377,6 +398,33 @@
 				84AC4E4428C39264008B33B7 /* CurrencyCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		84AC4E4928C3C850008B33B7 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				84AC4E4A28C3C859008B33B7 /* HomePresenting.swift */,
+				84AC4E5328C3CAA6008B33B7 /* HomePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		84AC4E4E28C3C9A3008B33B7 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				84AC4E4F28C3C9AD008B33B7 /* HomeInteracting.swift */,
+				84AC4E5128C3CA3C008B33B7 /* HomeInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		84AC4E5528C3CBE6008B33B7 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				84AC4E5628C3CBF6008B33B7 /* HomeRouting.swift */,
+				84AC4E5828C3CC2B008B33B7 /* HomeRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,10 +675,14 @@
 				8405DB3228C2539700DA2630 /* ViewController.swift in Sources */,
 				8462E48A28C278CF002E99D2 /* WelcomeRouting.swift in Sources */,
 				84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */,
+				84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */,
+				84AC4E5228C3CA3C008B33B7 /* HomeInteractor.swift in Sources */,
+				84AC4E4B28C3C859008B33B7 /* HomePresenting.swift in Sources */,
 				8462E48628C27850002E99D2 /* WelcomeViewControlling.swift in Sources */,
 				8462E48C28C27933002E99D2 /* WelcomeRouter.swift in Sources */,
 				84AC4E4528C39264008B33B7 /* CurrencyCell.swift in Sources */,
 				8462E47F28C270A1002E99D2 /* ExchangeViewController.swift in Sources */,
+				84AC4E5928C3CC2B008B33B7 /* HomeRouter.swift in Sources */,
 				8462E49028C281DF002E99D2 /* GetCoinListsServiceProtocol.swift in Sources */,
 				8462E49928C2839A002E99D2 /* TimeModel.swift in Sources */,
 				8405DB6228C2600F00DA2630 /* WelcomeViewController.swift in Sources */,
@@ -641,12 +693,16 @@
 				8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */,
 				8462E48828C278A8002E99D2 /* WelcomePresenter.swift in Sources */,
 				84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */,
+				84AC4E4828C3B571008B33B7 /* Images.swift in Sources */,
 				8462E47D28C27021002E99D2 /* HomeViewController.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,
 				84AC4E4128C3900B008B33B7 /* UIView+Extension.swift in Sources */,
 				8462E47928C26ECF002E99D2 /* InAppViewController.swift in Sources */,
+				84AC4E4D28C3C8BA008B33B7 /* HomeViewControlling.swift in Sources */,
 				8462E49728C28341002E99D2 /* CurrencyModel.swift in Sources */,
+				84AC4E5028C3C9AD008B33B7 /* HomeInteracting.swift in Sources */,
 				8462E48428C277BE002E99D2 /* WelcomePresenting.swift in Sources */,
+				84AC4E5728C3CBF6008B33B7 /* HomeRouting.swift in Sources */,
 				8405DB3028C2539700DA2630 /* SceneDelegate.swift in Sources */,
 				8462E49228C28214002E99D2 /* GetCoinListsService.swift in Sources */,
 			);

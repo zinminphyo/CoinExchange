@@ -21,4 +21,5 @@ enum CurrencyType {
     case USD
     case EUR
     case GBP
+    case UNKNOWN
 }

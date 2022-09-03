@@ -44,14 +44,13 @@
             </objects>
             <point key="canvasLocation" x="-599" y="-295"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="7YR-WX-NvU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r2J-GN-Evt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="2ru-d6-etO"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="r2J-GN-Evt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="bitcoinsign.circle.fill" catalog="system" id="2ru-d6-etO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xdD-ug-GwN">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -63,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="332" y="-830"/>
         </scene>
-        <!--Exchange-->
+        <!--Navigation Controller-->
         <scene sceneID="kJR-bR-WVk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zRQ-FU-Cqg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Exchange" id="Xzg-U5-eqo"/>
+                    <tabBarItem key="tabBarItem" title="" image="fiberchannel" catalog="system" id="Xzg-U5-eqo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z4F-AL-Xbx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -83,4 +82,8 @@
             <point key="canvasLocation" x="386" y="72"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="fiberchannel" catalog="system" width="128" height="92"/>
+    </resources>
 </document>
