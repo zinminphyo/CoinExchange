@@ -15,3 +15,10 @@ struct CurrencyModel: Codable {
     let description: String
     let rate_float: Float?
 }
+
+
+enum CurrencyType {
+    case USD
+    case EUR
+    case GBP
+}

@@ -10,5 +10,5 @@ import Foundation
 protocol GetCoinListsServiceProtocol {
     
     typealias onCompletion = (Result<CurrentPriceModel,NetworkError>) -> ()
-    func fetchCoinLists()
+    func fetchCoinLists(completion: @escaping onCompletion)
 }

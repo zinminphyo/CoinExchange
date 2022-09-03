@@ -12,15 +12,14 @@ import Alamofire
 
 struct GetCoinListsService: GetCoinListsServiceProtocol {
     
-    
-    func fetchCoinLists() {
+    func fetchCoinLists(completion: @escaping onCompletion) {
         let router = ApiRouter.getCurrentPrice
         NetworkService.shared.request(router: router) { (result: Result<CurrentPriceModel,NetworkError>) in
             switch result {
             case .success(let success):
-                print("Success \(success)")
+                completion(.success(success))
             case .failure(let failure):
-                print("Failure is \(failure.localizedDescription)")
+                completion(.failure(failure))
             }
         }
     }
