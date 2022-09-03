@@ -13,27 +13,45 @@ class HomeViewController: UIViewController {
         String(describing: Self.self)
     }
     
+    private var tableView: UITableView = {
+        let tblView = UITableView()
+        return tblView
+    }()
+    
+    let coins = ["USD","EUR","GBP"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tableView.frame = view.bounds
+        tableView.separatorStyle = .none
+        view.addSubview(tableView)
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        
+        
+        let service = GetCoinListsService()
+        service.fetchCoinLists()
+    }
+
+    
+    
+}
+
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return coins.count
     }
     
-
-    @IBAction func didTapClickMeBtn(_ sender: UIButton) {
-        
-        let vc = ViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = coins[indexPath.row]
+        return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
