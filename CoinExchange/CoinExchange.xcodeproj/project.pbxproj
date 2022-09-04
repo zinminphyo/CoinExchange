@@ -48,6 +48,7 @@
 		845F940328C4F64E00E7E113 /* HistoryRatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F940228C4F64E00E7E113 /* HistoryRatePresenter.swift */; };
 		845F940A28C4F79300E7E113 /* HistoryRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F940828C4F79300E7E113 /* HistoryRateTableViewCell.swift */; };
 		845F940B28C4F79300E7E113 /* HistoryRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845F940928C4F79300E7E113 /* HistoryRateTableViewCell.xib */; };
+		845F940E28C5200400E7E113 /* AdditionalExercieses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F940D28C5200400E7E113 /* AdditionalExercieses.swift */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -147,6 +148,7 @@
 		845F940228C4F64E00E7E113 /* HistoryRatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRatePresenter.swift; sourceTree = "<group>"; };
 		845F940828C4F79300E7E113 /* HistoryRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRateTableViewCell.swift; sourceTree = "<group>"; };
 		845F940928C4F79300E7E113 /* HistoryRateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryRateTableViewCell.xib; sourceTree = "<group>"; };
+		845F940D28C5200400E7E113 /* AdditionalExercieses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalExercieses.swift; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		8405DB2C28C2539700DA2630 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				845F940C28C51FF100E7E113 /* Exercises */,
 				845F93F828C4EDF100E7E113 /* DataLayer */,
 				845F93F028C4EAB600E7E113 /* HistoryRate */,
 				845F93DD28C4C49A00E7E113 /* Utils */,
@@ -511,6 +514,14 @@
 				845F940928C4F79300E7E113 /* HistoryRateTableViewCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		845F940C28C51FF100E7E113 /* Exercises */ = {
+			isa = PBXGroup;
+			children = (
+				845F940D28C5200400E7E113 /* AdditionalExercieses.swift */,
+			);
+			path = Exercises;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -944,6 +955,7 @@
 				845F93DA28C49BDA00E7E113 /* ZMPDropDownView.swift in Sources */,
 				845F93D228C4520700E7E113 /* NibLoadable.swift in Sources */,
 				845F940128C4F52600E7E113 /* HistoryRateViewControlling.swift in Sources */,
+				845F940E28C5200400E7E113 /* AdditionalExercieses.swift in Sources */,
 				845F93EB28C4DBF300E7E113 /* ExchangeInteractor.swift in Sources */,
 				8462E47D28C27021002E99D2 /* HomeViewController.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,

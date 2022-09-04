@@ -11,17 +11,20 @@ import XCTest
 class CoinExchangeTests: XCTestCase {
     
     private var model: CurrencyModel!
+    private var exerciese: AdditionalExercises!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
         model = CurrencyModel(code: "USD", symbol: "&#36;", rate: "19,917.5156", description: "United States Dollar", rate_float: Optional(19917.516))
+        exerciese = AdditionalExercises()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         try super.tearDownWithError()
         model = nil
+        exerciese = nil
     }
 
     func testExample() throws {
@@ -54,5 +57,14 @@ class CoinExchangeTests: XCTestCase {
         XCTAssertTrue(Utils.shared.getCurrenyType(for: model.code) == .UNKNOWN)
     }
     
+    func testFibonacciSequence() {
+        
+        XCTAssertEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55], exerciese.generateFibonacci(n: 10))
+    }
+    
+    
+    func testPrimeNumberSequence() {
+        XCTAssertEqual([2,3,5,7,11,13,17,19,23,29,31,37,41,43,47], exerciese.generatePrimeNumbers(endNumber: 50))
+    }
 
 }
