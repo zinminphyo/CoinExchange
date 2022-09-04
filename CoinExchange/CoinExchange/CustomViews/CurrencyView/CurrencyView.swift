@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CurrencyView: UIView, NibLoadable {
+class CurrencyView: ZMPDropDownView, NibLoadable {
     
     @IBOutlet weak var currencyImageView: UIImageView!
     @IBOutlet weak var currencyNameLabel: UILabel!
@@ -23,6 +23,7 @@ class CurrencyView: UIView, NibLoadable {
     }
     
     @IBAction func didTapDropDownBtn(_ sender: UIButton) {
+        showDropDown()
     }
     
 }

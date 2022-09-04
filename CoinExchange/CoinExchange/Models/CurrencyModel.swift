@@ -8,12 +8,16 @@
 import Foundation
 
 
-struct CurrencyModel: Codable {
+struct CurrencyModel: Codable, ZMPItem {
     let code: String
     let symbol: String
     let rate: String
     let description: String
     let rate_float: Float?
+    
+    func getTitle() -> String {
+        return code
+    }
 }
 
 

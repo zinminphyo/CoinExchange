@@ -11,7 +11,7 @@
         <!--Convert-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="Convert" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExchangeViewController" title="Convert" id="Y6W-OH-hqX" customClass="ExchangeViewController" customModule="CoinExchange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,10 +165,14 @@
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fromCurrencyView" destination="AfL-AE-1zi" id="jvC-CR-2sf"/>
+                        <outlet property="toCurrencyView" destination="gTM-dC-YLM" id="NCM-zm-P5E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.927536231884062" y="83.705357142857139"/>
+            <point key="canvasLocation" x="262" y="85"/>
         </scene>
     </scenes>
     <resources>

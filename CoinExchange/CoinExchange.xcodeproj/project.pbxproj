@@ -29,6 +29,8 @@
 		845F93CF28C451D900E7E113 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93CE28C451D900E7E113 /* CurrencyView.swift */; };
 		845F93D228C4520700E7E113 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D128C4520700E7E113 /* NibLoadable.swift */; };
 		845F93D728C4931800E7E113 /* ZMPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D628C4931800E7E113 /* ZMPTextField.swift */; };
+		845F93DA28C49BDA00E7E113 /* ZMPDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */; };
+		845F93DC28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -109,6 +111,8 @@
 		845F93CE28C451D900E7E113 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		845F93D128C4520700E7E113 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		845F93D628C4931800E7E113 /* ZMPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPTextField.swift; sourceTree = "<group>"; };
+		845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPDropDownView.swift; sourceTree = "<group>"; };
+		845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPDropDownViewDataSource.swift; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		845F93CA28C4514300E7E113 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				845F93D828C49BC500E7E113 /* ZMPDropDownView */,
 				845F93D528C4930000E7E113 /* ZMPTextField */,
 				845F93CB28C4518000E7E113 /* CurrencyView */,
 			);
@@ -343,6 +348,15 @@
 				845F93D628C4931800E7E113 /* ZMPTextField.swift */,
 			);
 			path = ZMPTextField;
+			sourceTree = "<group>";
+		};
+		845F93D828C49BC500E7E113 /* ZMPDropDownView */ = {
+			isa = PBXGroup;
+			children = (
+				845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */,
+				845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */,
+			);
+			path = ZMPDropDownView;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -738,6 +752,7 @@
 			files = (
 				8405DB3228C2539700DA2630 /* ViewController.swift in Sources */,
 				8462E48A28C278CF002E99D2 /* WelcomeRouting.swift in Sources */,
+				845F93DC28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift in Sources */,
 				84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */,
 				845F93CF28C451D900E7E113 /* CurrencyView.swift in Sources */,
 				84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */,
@@ -759,6 +774,7 @@
 				8462E48828C278A8002E99D2 /* WelcomePresenter.swift in Sources */,
 				84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */,
 				84AC4E4828C3B571008B33B7 /* Images.swift in Sources */,
+				845F93DA28C49BDA00E7E113 /* ZMPDropDownView.swift in Sources */,
 				845F93D228C4520700E7E113 /* NibLoadable.swift in Sources */,
 				8462E47D28C27021002E99D2 /* HomeViewController.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,
