@@ -46,6 +46,8 @@
 		845F93FF28C4F4DA00E7E113 /* HistoryRatePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93FE28C4F4DA00E7E113 /* HistoryRatePresenting.swift */; };
 		845F940128C4F52600E7E113 /* HistoryRateViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F940028C4F52600E7E113 /* HistoryRateViewControlling.swift */; };
 		845F940328C4F64E00E7E113 /* HistoryRatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F940228C4F64E00E7E113 /* HistoryRatePresenter.swift */; };
+		845F940A28C4F79300E7E113 /* HistoryRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F940828C4F79300E7E113 /* HistoryRateTableViewCell.swift */; };
+		845F940B28C4F79300E7E113 /* HistoryRateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845F940928C4F79300E7E113 /* HistoryRateTableViewCell.xib */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -143,6 +145,8 @@
 		845F93FE28C4F4DA00E7E113 /* HistoryRatePresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRatePresenting.swift; sourceTree = "<group>"; };
 		845F940028C4F52600E7E113 /* HistoryRateViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRateViewControlling.swift; sourceTree = "<group>"; };
 		845F940228C4F64E00E7E113 /* HistoryRatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRatePresenter.swift; sourceTree = "<group>"; };
+		845F940828C4F79300E7E113 /* HistoryRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRateTableViewCell.swift; sourceTree = "<group>"; };
+		845F940928C4F79300E7E113 /* HistoryRateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryRateTableViewCell.xib; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -440,6 +444,9 @@
 		845F93F028C4EAB600E7E113 /* HistoryRate */ = {
 			isa = PBXGroup;
 			children = (
+				845F940628C4F76800E7E113 /* entity */,
+				845F940528C4F76400E7E113 /* router */,
+				845F940428C4F75D00E7E113 /* interactor */,
 				845F93FD28C4F4C900E7E113 /* presenter */,
 				845F93F128C4EAC100E7E113 /* view */,
 				845F93F628C4EBF100E7E113 /* HistoryRateModule.swift */,
@@ -450,6 +457,7 @@
 		845F93F128C4EAC100E7E113 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				845F940728C4F77900E7E113 /* cell */,
 				845F93F228C4EACA00E7E113 /* HistoryRate.storyboard */,
 				845F93F428C4EAF700E7E113 /* HistoryRateViewController.swift */,
 				845F940028C4F52600E7E113 /* HistoryRateViewControlling.swift */,
@@ -473,6 +481,36 @@
 				845F940228C4F64E00E7E113 /* HistoryRatePresenter.swift */,
 			);
 			path = presenter;
+			sourceTree = "<group>";
+		};
+		845F940428C4F75D00E7E113 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		845F940528C4F76400E7E113 /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		845F940628C4F76800E7E113 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		845F940728C4F77900E7E113 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				845F940828C4F79300E7E113 /* HistoryRateTableViewCell.swift */,
+				845F940928C4F79300E7E113 /* HistoryRateTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -740,6 +778,7 @@
 				8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */,
 				8405DB3528C2539700DA2630 /* Main.storyboard in Resources */,
 				8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */,
+				845F940B28C4F79300E7E113 /* HistoryRateTableViewCell.xib in Resources */,
 				845F93CD28C451B000E7E113 /* CurrencyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,6 +916,7 @@
 				845F93DF28C4C4AA00E7E113 /* Utils.swift in Sources */,
 				84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */,
 				845F93ED28C4DC4800E7E113 /* ExchangePresenter.swift in Sources */,
+				845F940A28C4F79300E7E113 /* HistoryRateTableViewCell.swift in Sources */,
 				84AC4E5228C3CA3C008B33B7 /* HomeInteractor.swift in Sources */,
 				84AC4E4B28C3C859008B33B7 /* HomePresenting.swift in Sources */,
 				8462E48628C27850002E99D2 /* WelcomeViewControlling.swift in Sources */,

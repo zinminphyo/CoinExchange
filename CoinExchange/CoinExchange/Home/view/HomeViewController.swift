@@ -32,12 +32,15 @@ class HomeViewController: UIViewController, MessagePresentable {
         // Do any additional setup after loading the view.
         dependencyInjection()
         configureHierarchy()
+        
+        presenter?.viewDidLoad()
 
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         presenter?.viewDidAppear()
     }
 

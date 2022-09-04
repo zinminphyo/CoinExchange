@@ -17,9 +17,6 @@ class HomePresenter: HomePresenting {
     
     func viewDidLoad() {
         
-    }
-    
-    func viewDidAppear() {
         interactor?.getCurrentPrice(completion: { result in
             switch result {
             case let .success(model):
@@ -29,6 +26,12 @@ class HomePresenter: HomePresenting {
                 self.view?.render(error: error)
             }
         })
+        
+        
+        
+    }
+    
+    func viewDidAppear() {
         
         Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateCurrentPrice), userInfo: nil, repeats: true)
         

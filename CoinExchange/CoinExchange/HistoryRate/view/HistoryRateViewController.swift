@@ -33,6 +33,8 @@ class HistoryRateViewController: UIViewController, MessagePresentable {
         
         presenter?.viewDidLoad()
         
+        print("Table view frame is \(tableView.frame)")
+        
     }
     
     
@@ -45,7 +47,7 @@ class HistoryRateViewController: UIViewController, MessagePresentable {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         view.addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: String(describing: HistoryRateTableViewCell.self), bundle: nil), forCellReuseIdentifier: HistoryRateTableViewCell.reuseIdentifier)
         tableView.dataSource = self
     }
     
@@ -58,8 +60,8 @@ extension HistoryRateViewController: UITableViewDataSource {
         return historyLists.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = historyLists[indexPath.row].dateTime
+        let cell = tableView.dequeueReusableCell(withIdentifier: HistoryRateTableViewCell.reuseIdentifier, for: indexPath) as! HistoryRateTableViewCell
+        cell.historyRate = historyLists[indexPath.row]
         return cell
     }
 }
