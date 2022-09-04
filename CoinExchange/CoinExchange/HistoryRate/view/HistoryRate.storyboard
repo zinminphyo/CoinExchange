@@ -9,21 +9,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BTC-->
+        <!--History Rate View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" title="BTC" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="CoinExchange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryRateViewController" hidesBottomBarWhenPushed="YES" id="Y6W-OH-hqX" customClass="HistoryRateViewController" customModule="CoinExchange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705.7971014492755" y="83.705357142857139"/>
+            <point key="canvasLocation" x="35" y="40"/>
         </scene>
     </scenes>
     <resources>

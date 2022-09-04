@@ -38,6 +38,9 @@
 		845F93E928C4DB8B00E7E113 /* ExchangeInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93E828C4DB8B00E7E113 /* ExchangeInteracting.swift */; };
 		845F93EB28C4DBF300E7E113 /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93EA28C4DBF300E7E113 /* ExchangeInteractor.swift */; };
 		845F93ED28C4DC4800E7E113 /* ExchangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93EC28C4DC4800E7E113 /* ExchangePresenter.swift */; };
+		845F93F328C4EACA00E7E113 /* HistoryRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845F93F228C4EACA00E7E113 /* HistoryRate.storyboard */; };
+		845F93F528C4EAF700E7E113 /* HistoryRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93F428C4EAF700E7E113 /* HistoryRateViewController.swift */; };
+		845F93F728C4EBF100E7E113 /* HistoryRateModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93F628C4EBF100E7E113 /* HistoryRateModule.swift */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -127,6 +130,9 @@
 		845F93E828C4DB8B00E7E113 /* ExchangeInteracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteracting.swift; sourceTree = "<group>"; };
 		845F93EA28C4DBF300E7E113 /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
 		845F93EC28C4DC4800E7E113 /* ExchangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePresenter.swift; sourceTree = "<group>"; };
+		845F93F228C4EACA00E7E113 /* HistoryRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryRate.storyboard; sourceTree = "<group>"; };
+		845F93F428C4EAF700E7E113 /* HistoryRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRateViewController.swift; sourceTree = "<group>"; };
+		845F93F628C4EBF100E7E113 /* HistoryRateModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRateModule.swift; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -241,6 +247,8 @@
 		8405DB2C28C2539700DA2630 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				845F93F828C4EDF100E7E113 /* DataLayer */,
+				845F93F028C4EAB600E7E113 /* HistoryRate */,
 				845F93DD28C4C49A00E7E113 /* Utils */,
 				845F93D028C451FB00E7E113 /* ViewLayer */,
 				845F93CA28C4514300E7E113 /* CustomViews */,
@@ -417,6 +425,31 @@
 			children = (
 			);
 			path = entity;
+			sourceTree = "<group>";
+		};
+		845F93F028C4EAB600E7E113 /* HistoryRate */ = {
+			isa = PBXGroup;
+			children = (
+				845F93F128C4EAC100E7E113 /* view */,
+				845F93F628C4EBF100E7E113 /* HistoryRateModule.swift */,
+			);
+			path = HistoryRate;
+			sourceTree = "<group>";
+		};
+		845F93F128C4EAC100E7E113 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				845F93F228C4EACA00E7E113 /* HistoryRate.storyboard */,
+				845F93F428C4EAF700E7E113 /* HistoryRateViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		845F93F828C4EDF100E7E113 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -677,6 +710,7 @@
 				8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */,
 				8405DB6628C2645700DA2630 /* Colors.xcassets in Resources */,
 				8405DB3A28C2539900DA2630 /* LaunchScreen.storyboard in Resources */,
+				845F93F328C4EACA00E7E113 /* HistoryRate.storyboard in Resources */,
 				8405DB6028C25FFF00DA2630 /* Welcome.storyboard in Resources */,
 				84AC4E4628C39264008B33B7 /* CurrencyCell.xib in Resources */,
 				8405DB3728C2539900DA2630 /* Assets.xcassets in Resources */,
@@ -812,6 +846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8405DB3228C2539700DA2630 /* ViewController.swift in Sources */,
+				845F93F528C4EAF700E7E113 /* HistoryRateViewController.swift in Sources */,
 				8462E48A28C278CF002E99D2 /* WelcomeRouting.swift in Sources */,
 				845F93DC28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift in Sources */,
 				84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */,
@@ -836,6 +871,7 @@
 				8405DB6428C2602A00DA2630 /* WelcomeModule.swift in Sources */,
 				845F93E128C4D7CA00E7E113 /* MessagePresentable.swift in Sources */,
 				8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */,
+				845F93F728C4EBF100E7E113 /* HistoryRateModule.swift in Sources */,
 				8462E48828C278A8002E99D2 /* WelcomePresenter.swift in Sources */,
 				84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */,
 				84AC4E4828C3B571008B33B7 /* Images.swift in Sources */,

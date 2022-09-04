@@ -49,6 +49,7 @@ extension HomeViewController {
     
     private func configureHierarchy() {
         configureTableView()
+        configureRightBarItem()
     }
     
     private func configureTableView() {
@@ -66,6 +67,15 @@ extension HomeViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    private func configureRightBarItem() {
+        let historyBtn = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(didTapHistoryBtn))
+        self.navigationItem.rightBarButtonItem = historyBtn
+    }
+    
+    @objc func didTapHistoryBtn() {
+        self.navigationController?.pushViewController(HistoryRateModule.createModule(), animated: true)
     }
     
     
