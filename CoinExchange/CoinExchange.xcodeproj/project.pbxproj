@@ -23,6 +23,12 @@
 		8405DB6428C2602A00DA2630 /* WelcomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB6328C2602A00DA2630 /* WelcomeModule.swift */; };
 		8405DB6628C2645700DA2630 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB6528C2645700DA2630 /* Colors.xcassets */; };
 		8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB6728C2657F00DA2630 /* NSLayoutConstraint+Extension.swift */; };
+		845F93C728C44A3100E7E113 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 845F93C628C44A3100E7E113 /* Realm */; };
+		845F93C928C44A3100E7E113 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 845F93C828C44A3100E7E113 /* RealmSwift */; };
+		845F93CD28C451B000E7E113 /* CurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845F93CC28C451B000E7E113 /* CurrencyView.xib */; };
+		845F93CF28C451D900E7E113 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93CE28C451D900E7E113 /* CurrencyView.swift */; };
+		845F93D228C4520700E7E113 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D128C4520700E7E113 /* NibLoadable.swift */; };
+		845F93D728C4931800E7E113 /* ZMPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D628C4931800E7E113 /* ZMPTextField.swift */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -99,6 +105,10 @@
 		8405DB6328C2602A00DA2630 /* WelcomeModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModule.swift; sourceTree = "<group>"; };
 		8405DB6528C2645700DA2630 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8405DB6728C2657F00DA2630 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		845F93CC28C451B000E7E113 /* CurrencyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyView.xib; sourceTree = "<group>"; };
+		845F93CE28C451D900E7E113 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		845F93D128C4520700E7E113 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		845F93D628C4931800E7E113 /* ZMPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPTextField.swift; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F93C928C44A3100E7E113 /* RealmSwift in Frameworks */,
+				845F93C728C44A3100E7E113 /* Realm in Frameworks */,
 				739A2720D21CF98007EA33A4 /* Pods_CoinExchange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +223,8 @@
 		8405DB2C28C2539700DA2630 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				845F93D028C451FB00E7E113 /* ViewLayer */,
+				845F93CA28C4514300E7E113 /* CustomViews */,
 				84AC4E3F28C38FFA008B33B7 /* Extensions */,
 				84AC4E3628C35249008B33B7 /* NetworkLayer */,
 				8462E49528C2832C002E99D2 /* Models */,
@@ -273,6 +287,7 @@
 		8405DB6F28C26C5100DA2630 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				845F93C428C441D700E7E113 /* entity */,
 				84AC4E5528C3CBE6008B33B7 /* router */,
 				84AC4E4E28C3C9A3008B33B7 /* interactor */,
 				84AC4E4928C3C850008B33B7 /* presenter */,
@@ -287,6 +302,47 @@
 				8462E47528C26E8E002E99D2 /* view */,
 			);
 			path = Exchange;
+			sourceTree = "<group>";
+		};
+		845F93C428C441D700E7E113 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		845F93CA28C4514300E7E113 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				845F93D528C4930000E7E113 /* ZMPTextField */,
+				845F93CB28C4518000E7E113 /* CurrencyView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		845F93CB28C4518000E7E113 /* CurrencyView */ = {
+			isa = PBXGroup;
+			children = (
+				845F93CC28C451B000E7E113 /* CurrencyView.xib */,
+				845F93CE28C451D900E7E113 /* CurrencyView.swift */,
+			);
+			path = CurrencyView;
+			sourceTree = "<group>";
+		};
+		845F93D028C451FB00E7E113 /* ViewLayer */ = {
+			isa = PBXGroup;
+			children = (
+				845F93D128C4520700E7E113 /* NibLoadable.swift */,
+			);
+			path = ViewLayer;
+			sourceTree = "<group>";
+		};
+		845F93D528C4930000E7E113 /* ZMPTextField */ = {
+			isa = PBXGroup;
+			children = (
+				845F93D628C4931800E7E113 /* ZMPTextField.swift */,
+			);
+			path = ZMPTextField;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -445,6 +501,10 @@
 			dependencies = (
 			);
 			name = CoinExchange;
+			packageProductDependencies = (
+				845F93C628C44A3100E7E113 /* Realm */,
+				845F93C828C44A3100E7E113 /* RealmSwift */,
+			);
 			productName = CoinExchange;
 			productReference = 8405DB2A28C2539700DA2630 /* CoinExchange.app */;
 			productType = "com.apple.product-type.application";
@@ -520,6 +580,9 @@
 				Base,
 			);
 			mainGroup = 8405DB2128C2539700DA2630;
+			packageReferences = (
+				845F93C528C44A3100E7E113 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 8405DB2B28C2539700DA2630 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -545,6 +608,7 @@
 				8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */,
 				8405DB3528C2539700DA2630 /* Main.storyboard in Resources */,
 				8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */,
+				845F93CD28C451B000E7E113 /* CurrencyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +739,7 @@
 				8405DB3228C2539700DA2630 /* ViewController.swift in Sources */,
 				8462E48A28C278CF002E99D2 /* WelcomeRouting.swift in Sources */,
 				84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */,
+				845F93CF28C451D900E7E113 /* CurrencyView.swift in Sources */,
 				84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */,
 				84AC4E5228C3CA3C008B33B7 /* HomeInteractor.swift in Sources */,
 				84AC4E4B28C3C859008B33B7 /* HomePresenting.swift in Sources */,
@@ -694,6 +759,7 @@
 				8462E48828C278A8002E99D2 /* WelcomePresenter.swift in Sources */,
 				84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */,
 				84AC4E4828C3B571008B33B7 /* Images.swift in Sources */,
+				845F93D228C4520700E7E113 /* NibLoadable.swift in Sources */,
 				8462E47D28C27021002E99D2 /* HomeViewController.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,
 				84AC4E4128C3900B008B33B7 /* UIView+Extension.swift in Sources */,
@@ -703,6 +769,7 @@
 				84AC4E5028C3C9AD008B33B7 /* HomeInteracting.swift in Sources */,
 				8462E48428C277BE002E99D2 /* WelcomePresenting.swift in Sources */,
 				84AC4E5728C3CBF6008B33B7 /* HomeRouting.swift in Sources */,
+				845F93D728C4931800E7E113 /* ZMPTextField.swift in Sources */,
 				8405DB3028C2539700DA2630 /* SceneDelegate.swift in Sources */,
 				8462E49228C28214002E99D2 /* GetCoinListsService.swift in Sources */,
 			);
@@ -1052,6 +1119,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		845F93C528C44A3100E7E113 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		845F93C628C44A3100E7E113 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 845F93C528C44A3100E7E113 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		845F93C828C44A3100E7E113 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 845F93C528C44A3100E7E113 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8405DB2228C2539700DA2630 /* Project object */;
 }

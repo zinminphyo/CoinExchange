@@ -28,6 +28,20 @@ class HomePresenter: HomePresenting {
                 self.view?.render(error: error)
             }
         })
+        
+        Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateCurrentPrice), userInfo: nil, repeats: true)
+        
+    }
+    
+    @objc func updateCurrentPrice() {
+        interactor?.getCurrentPrice(completion: { result in
+            switch result {
+            case let .success(model):
+                self.view?.render(model: model)
+            case let .failure(error):
+                self.view?.render(error: error)
+            }
+        })
     }
     
     
