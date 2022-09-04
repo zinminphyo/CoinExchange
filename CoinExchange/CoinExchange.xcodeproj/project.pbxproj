@@ -32,6 +32,12 @@
 		845F93DA28C49BDA00E7E113 /* ZMPDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */; };
 		845F93DC28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */; };
 		845F93DF28C4C4AA00E7E113 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93DE28C4C4AA00E7E113 /* Utils.swift */; };
+		845F93E128C4D7CA00E7E113 /* MessagePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93E028C4D7CA00E7E113 /* MessagePresentable.swift */; };
+		845F93E428C4DA6C00E7E113 /* ExchangePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93E328C4DA6C00E7E113 /* ExchangePresenting.swift */; };
+		845F93E628C4DA9C00E7E113 /* ExchangeViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93E528C4DA9C00E7E113 /* ExchangeViewControlling.swift */; };
+		845F93E928C4DB8B00E7E113 /* ExchangeInteracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93E828C4DB8B00E7E113 /* ExchangeInteracting.swift */; };
+		845F93EB28C4DBF300E7E113 /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93EA28C4DBF300E7E113 /* ExchangeInteractor.swift */; };
+		845F93ED28C4DC4800E7E113 /* ExchangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93EC28C4DC4800E7E113 /* ExchangePresenter.swift */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -115,6 +121,12 @@
 		845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPDropDownView.swift; sourceTree = "<group>"; };
 		845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPDropDownViewDataSource.swift; sourceTree = "<group>"; };
 		845F93DE28C4C4AA00E7E113 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		845F93E028C4D7CA00E7E113 /* MessagePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePresentable.swift; sourceTree = "<group>"; };
+		845F93E328C4DA6C00E7E113 /* ExchangePresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePresenting.swift; sourceTree = "<group>"; };
+		845F93E528C4DA9C00E7E113 /* ExchangeViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewControlling.swift; sourceTree = "<group>"; };
+		845F93E828C4DB8B00E7E113 /* ExchangeInteracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteracting.swift; sourceTree = "<group>"; };
+		845F93EA28C4DBF300E7E113 /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
+		845F93EC28C4DC4800E7E113 /* ExchangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePresenter.swift; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -306,6 +318,10 @@
 		8405DB7028C26CED00DA2630 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				845F93EF28C4DFA100E7E113 /* entity */,
+				845F93EE28C4DF9A00E7E113 /* router */,
+				845F93E728C4DB7F00E7E113 /* interactor */,
+				845F93E228C4DA6300E7E113 /* presenter */,
 				8462E47528C26E8E002E99D2 /* view */,
 			);
 			path = Exchange;
@@ -341,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				845F93D128C4520700E7E113 /* NibLoadable.swift */,
+				845F93E028C4D7CA00E7E113 /* MessagePresentable.swift */,
 			);
 			path = ViewLayer;
 			sourceTree = "<group>";
@@ -368,6 +385,38 @@
 				845F93DE28C4C4AA00E7E113 /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		845F93E228C4DA6300E7E113 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				845F93E328C4DA6C00E7E113 /* ExchangePresenting.swift */,
+				845F93EC28C4DC4800E7E113 /* ExchangePresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		845F93E728C4DB7F00E7E113 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				845F93E828C4DB8B00E7E113 /* ExchangeInteracting.swift */,
+				845F93EA28C4DBF300E7E113 /* ExchangeInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		845F93EE28C4DF9A00E7E113 /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		845F93EF28C4DFA100E7E113 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -404,6 +453,7 @@
 			children = (
 				8462E47628C26E95002E99D2 /* Exchange.storyboard */,
 				8462E47E28C270A1002E99D2 /* ExchangeViewController.swift */,
+				845F93E528C4DA9C00E7E113 /* ExchangeViewControlling.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -768,6 +818,7 @@
 				845F93CF28C451D900E7E113 /* CurrencyView.swift in Sources */,
 				845F93DF28C4C4AA00E7E113 /* Utils.swift in Sources */,
 				84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */,
+				845F93ED28C4DC4800E7E113 /* ExchangePresenter.swift in Sources */,
 				84AC4E5228C3CA3C008B33B7 /* HomeInteractor.swift in Sources */,
 				84AC4E4B28C3C859008B33B7 /* HomePresenting.swift in Sources */,
 				8462E48628C27850002E99D2 /* WelcomeViewControlling.swift in Sources */,
@@ -777,24 +828,29 @@
 				84AC4E5928C3CC2B008B33B7 /* HomeRouter.swift in Sources */,
 				8462E49028C281DF002E99D2 /* GetCoinListsServiceProtocol.swift in Sources */,
 				8462E49928C2839A002E99D2 /* TimeModel.swift in Sources */,
+				845F93E428C4DA6C00E7E113 /* ExchangePresenting.swift in Sources */,
 				8405DB6228C2600F00DA2630 /* WelcomeViewController.swift in Sources */,
 				8462E47B28C26EDD002E99D2 /* InAppModule.swift in Sources */,
 				84AC4E3C28C355C0008B33B7 /* NetworkError.swift in Sources */,
 				8462E49B28C283FC002E99D2 /* CurrentPriceModel.swift in Sources */,
 				8405DB6428C2602A00DA2630 /* WelcomeModule.swift in Sources */,
+				845F93E128C4D7CA00E7E113 /* MessagePresentable.swift in Sources */,
 				8405DB6828C2657F00DA2630 /* NSLayoutConstraint+Extension.swift in Sources */,
 				8462E48828C278A8002E99D2 /* WelcomePresenter.swift in Sources */,
 				84AC4E3A28C35269008B33B7 /* ApiRouter.swift in Sources */,
 				84AC4E4828C3B571008B33B7 /* Images.swift in Sources */,
 				845F93DA28C49BDA00E7E113 /* ZMPDropDownView.swift in Sources */,
 				845F93D228C4520700E7E113 /* NibLoadable.swift in Sources */,
+				845F93EB28C4DBF300E7E113 /* ExchangeInteractor.swift in Sources */,
 				8462E47D28C27021002E99D2 /* HomeViewController.swift in Sources */,
 				8405DB2E28C2539700DA2630 /* AppDelegate.swift in Sources */,
 				84AC4E4128C3900B008B33B7 /* UIView+Extension.swift in Sources */,
 				8462E47928C26ECF002E99D2 /* InAppViewController.swift in Sources */,
 				84AC4E4D28C3C8BA008B33B7 /* HomeViewControlling.swift in Sources */,
 				8462E49728C28341002E99D2 /* CurrencyModel.swift in Sources */,
+				845F93E628C4DA9C00E7E113 /* ExchangeViewControlling.swift in Sources */,
 				84AC4E5028C3C9AD008B33B7 /* HomeInteracting.swift in Sources */,
+				845F93E928C4DB8B00E7E113 /* ExchangeInteracting.swift in Sources */,
 				8462E48428C277BE002E99D2 /* WelcomePresenting.swift in Sources */,
 				84AC4E5728C3CBF6008B33B7 /* HomeRouting.swift in Sources */,
 				845F93D728C4931800E7E113 /* ZMPTextField.swift in Sources */,
@@ -985,6 +1041,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1014,6 +1071,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

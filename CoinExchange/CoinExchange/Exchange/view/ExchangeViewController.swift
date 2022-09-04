@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController {
+class ExchangeViewController: UIViewController, MessagePresentable {
     
     @IBOutlet weak var fromCurrencyView: CurrencyView!
     @IBOutlet weak var fromCurrenyTxtField: ZMPTextField!
@@ -23,6 +23,7 @@ class ExchangeViewController: UIViewController {
     
     private var fromCurrencyModel: CurrencyModel! = nil
     
+    var presenter: ExchangePresenting?
     
     static var identifier: String {
         String(describing: Self.self)
@@ -31,36 +32,22 @@ class ExchangeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        injectDependency()
+        
         fromCurrencyView.dataSource = self
         fromCurrencyView.delegate = self
         
         fromCurrenyTxtField.addTarget(self, action: #selector(didChangeCurrency(textField:)), for: .editingChanged)
         
-        
-        let service = GetCoinListsService()
-        service.fetchCoinLists { result in
-            switch result {
-            case let .success(model):
-                model.bpi.forEach { (_,value) in
-                    self.currencyLists.append(value)
-                }
-                guard let defaultValue = self.currencyLists.first else { return }
-                self.fromCurrencyModel = defaultValue
-            case let .failure(error):
-                print("error is \(error.localizedDescription)")
-            }
-        }
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
-        tapGesture.delegate = self
-        tapGesture.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tapGesture)
-        
  
+        configureHierarchy()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        presenter?.viewWillAppear()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
@@ -71,6 +58,24 @@ class ExchangeViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    
+    
+}
+
+// MARK: - Helper Functions.
+extension ExchangeViewController {
+    
+    private func configureHierarchy() {
+        configureGesture()
+    }
+    
+    private func configureGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     @objc func tapGesture() {
@@ -87,25 +92,43 @@ class ExchangeViewController: UIViewController {
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
                 self.containerViewCenterYConstraint.constant = -100
             }, completion: nil)
-            
         } else if notification.name == UIResponder.keyboardWillHideNotification {
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
                 self.containerViewCenterYConstraint.constant = 0
             }, completion: nil)
         }
     }
-    
-    
 }
 
 
-extension ExchangeViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return true
+// MARK: - View Controlling Conformance
+extension ExchangeViewController: ExchangeViewControlling {
+    
+    func render(lists: [CurrencyModel]) {
+        self.currencyLists = lists
+        guard let defaultValue = lists.first else { return }
+        fromCurrencyModel = defaultValue
+    }
+    
+    func render(error: NetworkError) {
+        self.present(error.localizedDescription)
     }
 }
 
 
+// MARK: - Dependency Injection.
+extension ExchangeViewController {
+    private func injectDependency() {
+        let presenter = ExchangePresenter()
+        let interactor = ExchangeInteractor()
+        
+        self.presenter = presenter
+        presenter.view = self
+        presenter.interactor = interactor
+    }
+}
+
+// MARK: - ZMPDropDown View DataSource and Delegate conformance.
 extension ExchangeViewController: ZMPDropDownViewDataSource {
     func numberOfItem(in view: ZMPDropDownView) -> Int {
         return currencyLists.count
@@ -122,9 +145,12 @@ extension ExchangeViewController: ZMPDropDownViewDelegate {
     }
 }
 
+
+
 extension ExchangeViewController {
     private func convertCurrency(value: Float) -> Float {
         let rate = fromCurrencyModel.rate_float ?? 0.0
         return value / rate
     }
 }
+

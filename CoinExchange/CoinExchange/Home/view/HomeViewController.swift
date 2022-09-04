@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, MessagePresentable {
 
     static var identifier: String {
         String(describing: Self.self)
@@ -95,7 +95,6 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("IndexPath is \(indexPath.row)")
     }
 }
 
@@ -107,7 +106,7 @@ extension HomeViewController: HomeViewControlling {
     }
     
     func render(error: NetworkError) {
-        
+        present(error.localizedDescription)
     }
     
     
