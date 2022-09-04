@@ -9,19 +9,27 @@ import UIKit
 
 class ExchangeViewController: UIViewController, MessagePresentable {
     
+    @IBOutlet weak var fromCurrencyContainerView: UIView!
     @IBOutlet weak var fromCurrencyView: CurrencyView!
     @IBOutlet weak var fromCurrenyTxtField: ZMPTextField!
     @IBOutlet weak var toCurrencyTxtField: ZMPTextField!
     @IBOutlet weak var containerViewCenterYConstraint: NSLayoutConstraint!
     
-    
+    /// Reactive Currency Lists.
     var currencyLists: [CurrencyModel] = [] {
         didSet {
             fromCurrencyView.dataSource = self
+            fromCurrencyContainerView.endShimmerLoading()
+        }
+    }
+  
+    ///  Reactive Currency Model.
+    private var fromCurrencyModel: CurrencyModel! = nil {
+        didSet {
+            bindToCurrencyView(currencyModel: fromCurrencyModel)
         }
     }
     
-    private var fromCurrencyModel: CurrencyModel! = nil
     
     var presenter: ExchangePresenting?
     
@@ -41,6 +49,7 @@ class ExchangeViewController: UIViewController, MessagePresentable {
         
  
         configureHierarchy()
+        fromCurrencyContainerView.startShimmerLoading()
     }
     
     
@@ -140,8 +149,12 @@ extension ExchangeViewController: ZMPDropDownViewDataSource {
 
 extension ExchangeViewController: ZMPDropDownViewDelegate {
     func didSelectItem(at indexPath: Int, in view: ZMPDropDownView) {
-        fromCurrencyView.currencyNameLabel.text = currencyLists[indexPath].code
-        fromCurrencyView.currencyImageView.image = Utils.shared.getImage(for: Utils.shared.getCurrenyType(for: currencyLists[indexPath].code))
+        fromCurrencyModel = currencyLists[indexPath]
+    }
+    
+    private func bindToCurrencyView(currencyModel: CurrencyModel) {
+        fromCurrencyView.currencyNameLabel.text = currencyModel.code
+        fromCurrencyView.currencyImageView.image = Utils.shared.getImage(for: Utils.shared.getCurrenyType(for: currencyModel.code))
     }
 }
 
