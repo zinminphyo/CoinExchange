@@ -10,15 +10,18 @@ import UIKit
 class ExchangeViewController: UIViewController {
     
     @IBOutlet weak var fromCurrencyView: CurrencyView!
-    @IBOutlet weak var toCurrencyView: CurrencyView!
+    @IBOutlet weak var fromCurrenyTxtField: ZMPTextField!
+    @IBOutlet weak var toCurrencyTxtField: ZMPTextField!
+    @IBOutlet weak var containerViewCenterYConstraint: NSLayoutConstraint!
     
     
-    var model: CurrentPriceModel? = nil {
+    var currencyLists: [CurrencyModel] = [] {
         didSet {
             fromCurrencyView.dataSource = self
-            toCurrencyView.dataSource = self
         }
     }
+    
+    private var fromCurrencyModel: CurrencyModel! = nil
     
     
     static var identifier: String {
@@ -29,48 +32,99 @@ class ExchangeViewController: UIViewController {
         super.viewDidLoad()
         
         fromCurrencyView.dataSource = self
-        toCurrencyView.dataSource = self
+        fromCurrencyView.delegate = self
+        
+        fromCurrenyTxtField.addTarget(self, action: #selector(didChangeCurrency(textField:)), for: .editingChanged)
         
         
+        let service = GetCoinListsService()
+        service.fetchCoinLists { result in
+            switch result {
+            case let .success(model):
+                model.bpi.forEach { (_,value) in
+                    self.currencyLists.append(value)
+                }
+                guard let defaultValue = self.currencyLists.first else { return }
+                self.fromCurrencyModel = defaultValue
+            case let .failure(error):
+                print("error is \(error.localizedDescription)")
+            }
+        }
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        tapGesture.delegate = self
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+        
+ 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            let service = GetCoinListsService()
-            service.fetchCoinLists { result in
-                switch result {
-                case let .success(model):
-                    self.model = model
-                case let .failure(error):
-                    print("error is \(error.localizedDescription)")
-                }
-            }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func tapGesture() {
+        self.view.endEditing(true)
+    }
+    
+    @objc func didChangeCurrency(textField: UITextField) {
+        let value = Float(textField.text ?? "0.0") ?? 0.0
+        toCurrencyTxtField.text = "\(convertCurrency(value: value))"
+    }
+    
+    @objc func keyboardNotification(_ notification: Notification) {
+        if notification.name == UIResponder.keyboardWillShowNotification {
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+                self.containerViewCenterYConstraint.constant = -100
+            }, completion: nil)
+            
+        } else if notification.name == UIResponder.keyboardWillHideNotification {
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+                self.containerViewCenterYConstraint.constant = 0
+            }, completion: nil)
         }
     }
     
     
-    
 }
+
+
+extension ExchangeViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return true
+    }
+}
+
 
 extension ExchangeViewController: ZMPDropDownViewDataSource {
     func numberOfItem(in view: ZMPDropDownView) -> Int {
-        return model?.bpi.count ?? 1
+        return currencyLists.count
     }
     func dataForItem(at index: Int) -> ZMPItem {
-        guard let bpi = model?.bpi else { return EmptyItem() }
-        return Array(bpi)[index].value
+        return currencyLists[index]
     }
 }
 
+extension ExchangeViewController: ZMPDropDownViewDelegate {
+    func didSelectItem(at indexPath: Int, in view: ZMPDropDownView) {
+        fromCurrencyView.currencyNameLabel.text = currencyLists[indexPath].code
+        fromCurrencyView.currencyImageView.image = Utils.shared.getImage(for: Utils.shared.getCurrenyType(for: currencyLists[indexPath].code))
+    }
+}
 
 extension ExchangeViewController {
-    struct EmptyItem: ZMPItem {
-        func getTitle() -> String {
-            return "Empty"
-        }
+    private func convertCurrency(value: Float) -> Float {
+        let rate = fromCurrencyModel.rate_float ?? 0.0
+        return value / rate
     }
 }

@@ -11,12 +11,14 @@ class ZMPDropDownView: UIView {
     
     private var tableView: UITableView!
     private var bgView: UIView!
+    private var containerView: UIView!
     private var shadowLayer: CAShapeLayer!
     private let cellHeight: CGFloat = 50.0
     private let cornerRadius: CGFloat = 10
     
     
     var dataSource: ZMPDropDownViewDataSource?
+    var delegate: ZMPDropDownViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,12 +39,19 @@ class ZMPDropDownView: UIView {
     }
     
     private func configureHierarchy() {
+        configureContainerView()
         configureTableView()
         configureShadowLayer()
         configureBackgroundView()
     }
     
-    
+    private func configureContainerView() {
+        containerView = UIView()
+        
+        containerView.backgroundColor = UIColor.clear
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapContainerView))
+        containerView.addGestureRecognizer(tapGesture)
+    }
     
     private func configureTableView() {
         tableView = UITableView()
@@ -67,13 +76,17 @@ class ZMPDropDownView: UIView {
         bgView = UIView()
     }
     
+    @objc func tapContainerView() {
+        hideDropDown()
+    }
+    
     func showDropDown() {
         
         let convertedPoint = getConvertedPoint(self, baseView: topController?.view)
         tableView.frame = CGRect(x: convertedPoint.x , y: convertedPoint.y + self.bounds.height, width: self.bounds.width, height: cellHeight * CGFloat(3) )
         
         bgView.frame = tableView.frame
-        
+        containerView.frame = topController?.view.bounds ?? .zero
         let path = UIBezierPath(roundedRect: bgView.bounds, cornerRadius: cornerRadius).cgPath
         shadowLayer.path = path
         shadowLayer.shadowPath = path
@@ -81,6 +94,7 @@ class ZMPDropDownView: UIView {
         bgView.layer.insertSublayer(shadowLayer, at: 0)
         
         tableView.reloadData()
+        topController?.view.addSubview(containerView)
         topController?.view.addSubview(bgView)
         topController?.view.addSubview(tableView)
     }
@@ -88,6 +102,7 @@ class ZMPDropDownView: UIView {
     func hideDropDown() {
         tableView.removeFromSuperview()
         bgView.removeFromSuperview()
+        containerView.removeFromSuperview()
     }
     
 
@@ -112,6 +127,7 @@ extension ZMPDropDownView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.didSelectItem(at: indexPath.row, in: self)
         hideDropDown()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

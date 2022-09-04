@@ -13,6 +13,10 @@ protocol ZMPDropDownViewDataSource {
     func dataForItem(at index: Int) -> ZMPItem
 }
 
+protocol ZMPDropDownViewDelegate {
+    func didSelectItem(at indexPath: Int, in view: ZMPDropDownView)
+}
+
 
 protocol ZMPItem {
     func getTitle() -> String

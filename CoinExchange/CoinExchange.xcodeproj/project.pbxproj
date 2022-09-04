@@ -31,6 +31,7 @@
 		845F93D728C4931800E7E113 /* ZMPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D628C4931800E7E113 /* ZMPTextField.swift */; };
 		845F93DA28C49BDA00E7E113 /* ZMPDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */; };
 		845F93DC28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */; };
+		845F93DF28C4C4AA00E7E113 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F93DE28C4C4AA00E7E113 /* Utils.swift */; };
 		8462E47128C26E1D002E99D2 /* InApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47028C26E1D002E99D2 /* InApp.storyboard */; };
 		8462E47428C26E5A002E99D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47328C26E5A002E99D2 /* Home.storyboard */; };
 		8462E47728C26E95002E99D2 /* Exchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8462E47628C26E95002E99D2 /* Exchange.storyboard */; };
@@ -113,6 +114,7 @@
 		845F93D628C4931800E7E113 /* ZMPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPTextField.swift; sourceTree = "<group>"; };
 		845F93D928C49BDA00E7E113 /* ZMPDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPDropDownView.swift; sourceTree = "<group>"; };
 		845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMPDropDownViewDataSource.swift; sourceTree = "<group>"; };
+		845F93DE28C4C4AA00E7E113 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8462E47028C26E1D002E99D2 /* InApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InApp.storyboard; sourceTree = "<group>"; };
 		8462E47328C26E5A002E99D2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8462E47628C26E95002E99D2 /* Exchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exchange.storyboard; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		8405DB2C28C2539700DA2630 /* CoinExchange */ = {
 			isa = PBXGroup;
 			children = (
+				845F93DD28C4C49A00E7E113 /* Utils */,
 				845F93D028C451FB00E7E113 /* ViewLayer */,
 				845F93CA28C4514300E7E113 /* CustomViews */,
 				84AC4E3F28C38FFA008B33B7 /* Extensions */,
@@ -357,6 +360,14 @@
 				845F93DB28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift */,
 			);
 			path = ZMPDropDownView;
+			sourceTree = "<group>";
+		};
+		845F93DD28C4C49A00E7E113 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				845F93DE28C4C4AA00E7E113 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8462E46E28C26E0F002E99D2 /* InApp */ = {
@@ -755,6 +766,7 @@
 				845F93DC28C4A9DC00E7E113 /* ZMPDropDownViewDataSource.swift in Sources */,
 				84AC4E3E28C35B49008B33B7 /* NetworkService.swift in Sources */,
 				845F93CF28C451D900E7E113 /* CurrencyView.swift in Sources */,
+				845F93DF28C4C4AA00E7E113 /* Utils.swift in Sources */,
 				84AC4E5428C3CAA6008B33B7 /* HomePresenter.swift in Sources */,
 				84AC4E5228C3CA3C008B33B7 /* HomeInteractor.swift in Sources */,
 				84AC4E4B28C3C859008B33B7 /* HomePresenting.swift in Sources */,

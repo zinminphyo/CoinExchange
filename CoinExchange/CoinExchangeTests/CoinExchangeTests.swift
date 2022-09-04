@@ -10,21 +10,18 @@ import XCTest
 
 class CoinExchangeTests: XCTestCase {
     
-    private var cell: CurrencyCell!
     private var model: CurrencyModel!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
         model = CurrencyModel(code: "USD", symbol: "&#36;", rate: "19,917.5156", description: "United States Dollar", rate_float: Optional(19917.516))
-        cell = CurrencyCell()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         try super.tearDownWithError()
         model = nil
-        cell = nil
     }
 
     func testExample() throws {
@@ -44,17 +41,17 @@ class CoinExchangeTests: XCTestCase {
     
     func testCurrentTypeIsCorrectForName() {
         
-        XCTAssertEqual(CurrencyType.USD, cell.getCurrenyType(for: model.code))
-        XCTAssertTrue(cell.getCurrenyType(for: model.code) == .USD)
+        XCTAssertEqual(CurrencyType.USD, Utils.shared.getCurrenyType(for: model.code))
+        XCTAssertTrue(Utils.shared.getCurrenyType(for: model.code) == .USD)
         
         model = CurrencyModel(code: "EUR", symbol: "&#36;", rate: "19,917.5156", description: "United States Dollar", rate_float: Optional(19917.516))
-        XCTAssertTrue(cell.getCurrenyType(for: model.code) == .EUR)
+        XCTAssertTrue(Utils.shared.getCurrenyType(for: model.code) == .EUR)
         
         model = CurrencyModel(code: "GBP", symbol: "&#36;", rate: "19,917.5156", description: "United States Dollar", rate_float: Optional(19917.516))
-        XCTAssertTrue(cell.getCurrenyType(for: model.code) == .GBP)
+        XCTAssertTrue(Utils.shared.getCurrenyType(for: model.code) == .GBP)
         
         model = CurrencyModel(code: "GHJ", symbol: "&#36;", rate: "19,917.5156", description: "United States Dollar", rate_float: Optional(19917.516))
-        XCTAssertTrue(cell.getCurrenyType(for: model.code) == .UNKNOWN)
+        XCTAssertTrue(Utils.shared.getCurrenyType(for: model.code) == .UNKNOWN)
     }
     
 
