@@ -23,6 +23,7 @@ class HomePresenter: HomePresenting {
         interactor?.getCurrentPrice(completion: { result in
             switch result {
             case let .success(model):
+                self.saveDataToRealm(model: model)
                 self.view?.render(model: model)
             case let .failure(error):
                 self.view?.render(error: error)
@@ -37,11 +38,18 @@ class HomePresenter: HomePresenting {
         interactor?.getCurrentPrice(completion: { result in
             switch result {
             case let .success(model):
+                self.saveDataToRealm(model: model)
                 self.view?.render(model: model)
             case let .failure(error):
                 self.view?.render(error: error)
             }
         })
+    }
+    
+    private func saveDataToRealm(model: CurrentPriceModel) {
+        var lists: [CurrencyModel] = []
+        model.bpi.forEach{ lists.append($0.value) }
+        DatabaseManager.shared.saveData(lists: lists, dateTime: model.time.updated)
     }
     
     

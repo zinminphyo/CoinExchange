@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HistoryRateViewController: UIViewController {
+class HistoryRateViewController: UIViewController, MessagePresentable {
     
     static var identifier: String {
         return String(describing: Self.self)
@@ -18,10 +18,21 @@ class HistoryRateViewController: UIViewController {
         return tblView
     }()
     
+    private var historyLists: [HistoryRateObject] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var presenter: HistoryRatePresenting?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureHierarchy()
+        
+        presenter?.viewDidLoad()
+        
     }
     
     
@@ -38,17 +49,31 @@ class HistoryRateViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    
 
 }
 
+// MARK: - UITable View Data Source.
 extension HistoryRateViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return historyLists.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "History"
+        cell.textLabel?.text = historyLists[indexPath.row].dateTime
         return cell
+    }
+}
+
+
+
+// MARK: - HistoryRate View Controlling Conformance.
+extension HistoryRateViewController: HistoryRateViewControlling {
+    
+    func render(historyLists: [HistoryRateObject]) {
+        self.historyLists = historyLists
+    }
+    
+    func render(error: String) {
+        present(error)
     }
 }
