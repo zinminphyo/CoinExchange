@@ -73,7 +73,8 @@ extension HomeViewController {
     }
     
     private func configureRightBarItem() {
-        let historyBtn = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(didTapHistoryBtn))
+        let historyBtn = UIBarButtonItem(image: Images.HISTORY_LOGO, style: .plain, target: self, action: #selector(didTapHistoryBtn))
+        historyBtn.tintColor = .black
         self.navigationItem.rightBarButtonItem = historyBtn
     }
     

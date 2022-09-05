@@ -49,7 +49,7 @@
         <scene sceneID="7YR-WX-NvU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r2J-GN-Evt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bitcoinsign.circle.fill" catalog="system" id="2ru-d6-etO"/>
+                    <tabBarItem key="tabBarItem" title="" image="home-line" id="2ru-d6-etO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xdD-ug-GwN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -68,7 +68,7 @@
         <scene sceneID="kJR-bR-WVk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zRQ-FU-Cqg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="fiberchannel" catalog="system" id="Xzg-U5-eqo"/>
+                    <tabBarItem key="tabBarItem" title="" image="arrow-up-down-line" id="Xzg-U5-eqo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z4F-AL-Xbx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -85,7 +85,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="fiberchannel" catalog="system" width="128" height="92"/>
+        <image name="arrow-up-down-line" width="24" height="24"/>
+        <image name="home-line" width="24" height="24"/>
     </resources>
 </document>
